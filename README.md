@@ -29,11 +29,11 @@
 
 | 项目 | 内容 |
 | --- | --- |
-| 名称 | TODO(数据与实验)：待定稿 |
+| 名称 | 待补充（数据集定稿后填写） |
 | 来源 | UCI Machine Learning Repository（具体数据集编号见 `scripts/download_data.py`） |
-| 规模 | TODO：样本数 × 特征数 |
-| 正负比 | TODO：违约样本占比 |
-| 缺失情况 | TODO |
+| 规模 | 待补充（样本数 × 特征数） |
+| 正负比 | 待补充（违约样本占比） |
+| 缺失情况 | 待补充 |
 
 原始数据体积较大且可公开获取，**不纳入版本库**。获取方式：
 
@@ -88,7 +88,7 @@ bash scripts/run_all.sh
 # 或分步执行
 python scripts/download_data.py
 python -m src.train --model all
-python -m src.evaluate --model TODO(最优模型)
+python -m src.evaluate --model gbdt     # 模型名取自 src/models.py 的 MODEL_ZOO
 ```
 
 所有随机过程统一由 `src/config.py` 中的 `SEED` 控制，同一环境重复运行结果一致。
@@ -100,9 +100,12 @@ python -m src.evaluate --model TODO(最优模型)
 
 | 模型 | PR-AUC | F1（最优阈值） | Recall | 说明 |
 | --- | --- | --- | --- | --- |
-| TODO | TODO | TODO | TODO | 基线 |
-| TODO | TODO | TODO | TODO | 重采样 |
-| TODO | TODO | TODO | TODO | 代价敏感 |
+| 待补充 | 待补充 | 待补充 | 待补充 | 基线：逻辑回归 |
+| 待补充 | 待补充 | 待补充 | 待补充 | 不平衡处理策略对比 |
+| 待补充 | 待补充 | 待补充 | 待补充 | 代价敏感阈值决策 |
+
+> 表格由 `results/tables/model_comparison.md` 生成后整表替换本节，
+> 保留表头写法即可，避免手工誊抄出错。
 
 ## 7. 报告
 
@@ -122,4 +125,4 @@ bash report/build_pdf.sh layout   # 逐页核对分页与图表位置
 
 1. UCI Machine Learning Repository：<https://archive.ics.uci.edu/>
 2. scikit-learn 用户指南（模型评估与概率校准）：<https://scikit-learn.org/stable/user_guide.html>
-3. TODO(数据与实验)：补充所选数据集的官方说明页与相关文献
+3. 所选数据集的官方说明页与相关文献：待补充

@@ -23,15 +23,15 @@ python scripts/download_data.py
 
 | 项目 | 内容 |
 | --- | --- |
-| 名称 | TODO(数据与实验)：待定稿 |
+| 名称 | 待补充（数据集定稿后填写） |
 | 来源 | UCI Machine Learning Repository |
-| 数据集编号 | TODO：见 `scripts/download_data.py` 中的 `DATASET_ID` |
+| 数据集编号 | 待补充（见 `scripts/download_data.py` 中的 `DATASET_ID`） |
 | 许可 / 使用条款 | 公开数据集，引用其官方页面 |
-| 样本数 | TODO |
-| 特征数 | TODO |
+| 样本数 | 待补充 |
+| 特征数 | 待补充 |
 | 标签列 | `default`（1 = 违约） |
-| 正负比 | TODO：违约样本占比 |
-| 缺失情况 | TODO |
+| 正负比 | 待补充（违约样本占比） |
+| 缺失情况 | 待补充 |
 
 ## 处理后文件
 
