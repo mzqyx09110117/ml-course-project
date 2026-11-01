@@ -55,6 +55,7 @@ python scripts/download_data.py     # 写入 data/raw/credit_default.csv
 | Python | 3.13.9 |
 | 主要依赖 | lightgbm 4.7.0、xgboost 3.4.1、scikit-learn 1.7.2、imbalanced-learn 0.14.0、shap 0.54.1、pandas 2.3.3 |
 | 并行度 | `n_jobs=6` |
+| 中文字体 | 需系统安装 Noto CJK（Debian/Ubuntu: `fonts-noto-cjk`）；脚本会从系统字体集自动提取 SC 字面供绘图使用，无需手工配置 |
 
 完整依赖与版本见 [`requirements.txt`](requirements.txt)：
 
@@ -62,6 +63,11 @@ python scripts/download_data.py     # 写入 data/raw/credit_default.csv
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
+
+> **绘图字体说明**：`scripts/run_experiments.py` 启动时会从系统
+> `NotoSansCJK-Regular.ttc` 中提取 SC 字面（Index 2）并缓存到 `assets/fonts/`
+> （该目录不入库）。若系统缺少 Noto CJK，图表中文可能显示为方框，请先安装
+> `fonts-noto-cjk` 再运行。
 
 ## 4. 目录结构
 
@@ -104,6 +110,12 @@ python scripts/extra_error_analysis.py
 # 或者一条命令
 bash scripts/run_all.sh
 ```
+
+> **关于 `--quick`**：`python scripts/run_experiments.py --quick` 只跑单种子的精简流程
+> （约 2.5 分钟、41 次运行），用于快速自检。它会**直接覆盖**已提交的完整实验产物
+> （`results/tables/t05`、`t06`、`results/metrics/all_runs.json`、部分图片），
+> 覆盖后 `git status` 会变脏且数字变为单种子版本。因此：
+> **仅做自检时使用 `--quick`，要得到与仓库一致的结果请不带参数运行完整流程**（约 8.4 分钟）。
 
 ## 6. 实测耗时
 
