@@ -1,0 +1,17 @@
+{
+ "n_rows_raw": 30000,
+ "n_cols": 24,
+ "n_dup_rows": 35,
+ "n_rows_clean": 29965,
+ "pos_rate": 0.22125813449023862,
+ "n_missing": 0,
+ "n_edu_undoc": 345,
+ "n_marriage_undoc": 54,
+ "n_neg_bill": 3932,
+ "neg_bill_rate": 0.021844444444444444,
+ "n_allzero_pay": 1432,
+ "limit_min": 10000.0,
+ "limit_max": 1000000.0,
+ "age_min": 21,
+ "age_max": 79
+}

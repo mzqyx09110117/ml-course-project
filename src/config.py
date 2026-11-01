@@ -33,10 +33,14 @@ POSITIVE_LABEL = 1
 
 # ---------- 实验设置 ----------
 SEED = 42
-TEST_SIZE = 0.2
-VAL_SIZE = 0.2
+# 占全体样本的比例：训练 70% / 验证 15% / 测试 15%
+TEST_SIZE = 0.15
+VAL_SIZE = 0.15
 N_FOLDS = 5
-N_JOBS = 4
+N_JOBS = 6
+
+# 类别型特征：树模型按整数编码使用，逻辑回归内部做 one-hot
+CATEGORICAL_COLS = ["SEX", "EDUCATION", "MARRIAGE"]
 
 # ---------- 不平衡处理与代价敏感 ----------
 # 误判代价比：漏判（违约判为正常）代价 / 误杀（正常判为违约）代价

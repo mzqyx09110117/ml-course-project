@@ -36,6 +36,12 @@ def timer(label: str = ""):
     print(f"[耗时] {label}: {time.time() - t0:.2f} s")
 
 
+def run_tag(model: str, strategy: str = "none",
+            feature_set: str = "engineered", seed: int = SEED) -> str:
+    """统一的实验标识：模型__策略__特征集__种子。"""
+    return f"{model}__{strategy}__{feature_set}__seed{seed}"
+
+
 def save_metrics(metrics: dict, name: str) -> None:
     """指标写入 ``results/metrics/<name>.json``。"""
     path = METRIC_DIR / f"{name}.json"
@@ -59,6 +65,24 @@ def save_fig(fig, name: str):
     fig.savefig(path, dpi=PLOT_STYLE["savefig.dpi"], bbox_inches="tight")
     print(f"[图] {path}")
     return path
+
+
+def setup_cjk_font() -> str:
+    """注册单个中文字体文件（Noto CJK 以 TTC 集合发布，matplotlib 无法直接索引）。"""
+    import matplotlib.font_manager as fm
+    import matplotlib.pyplot as plt
+
+    from .config import ROOT
+
+    font_path = ROOT / "assets" / "fonts" / "NotoSansCJKsc-Regular.otf"
+    if font_path.exists():
+        fm.fontManager.addfont(str(font_path))
+        name = fm.FontProperties(fname=str(font_path)).get_name()
+    else:
+        name = "Noto Sans CJK SC"
+    plt.rcParams["font.sans-serif"] = [name, "DejaVu Sans"]
+    plt.rcParams["axes.unicode_minus"] = False
+    return name
 
 
 def apply_plot_style() -> None:

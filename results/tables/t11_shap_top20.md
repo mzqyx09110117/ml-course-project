@@ -1,0 +1,22 @@
+| feature        |   mean_abs_shap |
+|:---------------|----------------:|
+| PAY_0          |          0.2658 |
+| LATE_CNT2      |          0.2089 |
+| LATE_CNT1      |          0.2061 |
+| UTIL_MAX       |          0.1254 |
+| PAY_AMT1       |          0.1227 |
+| BILL_STD       |          0.1110 |
+| BILL_AMT1      |          0.1080 |
+| PAY_RATIO_MEAN |          0.0908 |
+| LIMIT_BAL      |          0.0891 |
+| PAY_AMT2       |          0.0855 |
+| PAY_RATIO_MIN  |          0.0841 |
+| DELAY_SUM      |          0.0798 |
+| BILL_SLOPE     |          0.0774 |
+| BILL_AMT5      |          0.0772 |
+| PAY_AMT3       |          0.0719 |
+| BILL_MAX       |          0.0705 |
+| UTIL_AVG       |          0.0668 |
+| MARRIAGE       |          0.0638 |
+| BILL_RANGE     |          0.0610 |
+| PAY_AMT_AVG    |          0.0563 |

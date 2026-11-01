@@ -33,8 +33,9 @@ data/interim/
 
 # ---------- 训练产物 ----------
 models/
-# metrics 目录保留占位，内容可重跑生成
+# metrics：指标 json 是可复现性的关键证据，入库；大体积中间结果不入库
 results/metrics/*
+!results/metrics/*.json
 !results/metrics/.gitkeep
 logs/
 *.log
@@ -70,3 +71,6 @@ desktop.ini
 # ---------- 本地私有配置（不入库）----------
 *.local.*
 .env
+
+# 运行时生成的中文字体（由 scripts/run_experiments.py 自动提取）
+assets/fonts/*
