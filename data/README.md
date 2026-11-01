@@ -23,22 +23,31 @@ python scripts/download_data.py
 
 | 项目 | 内容 |
 | --- | --- |
-| 名称 | 待补充（数据集定稿后填写） |
-| 来源 | UCI Machine Learning Repository |
-| 数据集编号 | 待补充（见 `scripts/download_data.py` 中的 `DATASET_ID`） |
+| 名称 | Default of Credit Card Clients |
+| 来源 | UCI Machine Learning Repository（id=350） |
+| 数据集编号 | 350 |
 | 许可 / 使用条款 | 公开数据集，引用其官方页面 |
-| 样本数 | 待补充 |
-| 特征数 | 待补充 |
+| 样本数 | 原始 30,000 行；剔除 35 条完全重复后 29,965 行 |
+| 特征数 | 原始 23 个字段；特征工程后 43 维（新增 20 个衍生特征） |
 | 标签列 | `default`（1 = 违约） |
-| 正负比 | 待补充（违约样本占比） |
-| 缺失情况 | 待补充 |
+| 正负比 | 违约 22.13% : 未违约 77.87% |
+| 缺失情况 | 无缺失值 |
+
+已知数据质量问题（已在 `src/data.py::clean` 中处理）：
+
+| 问题 | 数量 | 处理方式 |
+| --- | --- | --- |
+| `EDUCATION` 未文档化取值（0 / 5 / 6） | 345 处 | 归入"其他"（4） |
+| `MARRIAGE` 未文档化取值（0） | 54 处 | 归入"其他"（3） |
+| 账单金额为负 | 3,932 处 | 视为退款，保留（比率特征中做 `+1` 平移） |
+| 完全重复记录 | 35 条 | 剔除 |
 
 ## 处理后文件
 
 | 文件 | 生成脚本 | 说明 |
 | --- | --- | --- |
-| `data/processed/credit_default_clean.csv` | `src/data.py::build_dataset` | 去重、缺失值与异常值处理后的数据 |
-| `data/processed/split_index.json` | `src/data.py::make_split` | 训练 / 验证 / 测试索引，保证划分可复现 |
+| `data/processed/credit_default_clean.csv` | `src/data.py::clean` | 去重、未文档化类别归并后的数据 |
+| `data/processed/split_index.json` | `src/data.py::make_split` | 分层 70/15/15 划分索引，保证划分可复现 |
 
 ## 校验
 
