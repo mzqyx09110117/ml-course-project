@@ -17,7 +17,8 @@ data/
 python scripts/download_data.py
 ```
 
-脚本通过 UCI 官方客户端拉取数据并写入 `data/raw/credit_default.csv`。
+脚本从 UCI 官方地址下载 zip 压缩包，解压后用 `xlrd` 读取其中的 `.xls`，
+再统一转换为 `data/raw/credit_default.csv`（UTF-8）。
 
 ## 数据集信息
 
