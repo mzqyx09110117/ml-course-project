@@ -1,0 +1,72 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.python-version
+
+# ---------- 数据（体积大 / 可复现，不入库）----------
+data/raw/
+data/processed/
+data/interim/
+*.csv
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+*.zip
+*.tar.gz
+# 但保留说明文件与占位
+!data/README.md
+!results/tables/*.csv
+!requirements.txt
+
+# ---------- 训练产物 ----------
+models/
+results/metrics/
+!results/metrics/.gitkeep
+logs/
+*.log
+runs/
+
+# ---------- Notebook 相关 ----------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+notebooks/**/*.nbconvert.ipynb
+
+# ---------- 构建 / 排版临时文件 ----------
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.synctex.gz
+report/tex/
+report/_build/
+~$*.docx
+~$*.xlsx
+~$*.pptx
+*.tmp
+*.bak
+
+# ---------- 编辑器 / 系统 ----------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- 本地私有配置（不入库）----------
+.githooks/blocked_terms.local.txt
+*.local.*
+.env
