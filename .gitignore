@@ -33,7 +33,8 @@ data/interim/
 
 # ---------- 训练产物 ----------
 models/
-results/metrics/
+# metrics 目录保留占位，内容可重跑生成
+results/metrics/*
 !results/metrics/.gitkeep
 logs/
 *.log
