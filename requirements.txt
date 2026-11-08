@@ -25,10 +25,8 @@ seaborn==0.13.2
 # 数据获取（官方 zip 内的 .xls 需要 xlrd 解析）
 xlrd==2.0.2
 
-# 表格与报告辅助
+# 表格导出
 tabulate==0.9.0
-openpyxl==3.1.5
-python-docx==1.2.0
 
 # 交互式分析（可选，不装不影响主流程）
 jupyterlab==4.4.7

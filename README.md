@@ -91,7 +91,6 @@ pip install -r requirements.txt
 │   ├── tables/                 # 结果表（csv + markdown）
 │   └── metrics/                # 指标 json（81 次运行的完整记录）
 ├── data/README.md              # 数据说明（原始数据不入库）
-├── report/                     # 报告与 PDF 构建脚本
 ├── tests/test_smoke.py         # 冒烟测试（合成数据跑通全链路）
 ├── _runs_log.md                # 运行日志：命令、耗时、分阶段记录
 ├── requirements.txt
@@ -209,11 +208,9 @@ bash scripts/run_all.sh
 
 ## 10. 报告
 
-课程设计报告位于 `report/` 目录（Word 与 PDF 两版）。由源文件重建 PDF：
-
-```bash
-bash report/build_pdf.sh tex      # 最终 PDF（矢量、字体嵌入）
-```
+课程设计报告（Word 与 PDF 两版）随作业一同提交。正文中的每一张表格与
+插图都对应 `results/tables/`、`results/figures/`、`results/metrics/` 下的
+原始结果文件，可逐项复核；报告数据与仓库结果同源，未做二次加工。
 
 ## 11. 许可
 
