@@ -208,7 +208,7 @@ bash scripts/run_all.sh
 
 ## 10. 报告
 
-课程项目报告（Word 与 PDF 两版）随作业一同提交。正文中的每一张表格与
+课程项目报告（PDF 版）随作业一同提交。正文中的每一张表格与
 插图都对应 `results/tables/`、`results/figures/`、`results/metrics/` 下的
 原始结果文件，可逐项复核；报告数据与仓库结果同源，未做二次加工。
 
